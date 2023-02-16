@@ -5,7 +5,7 @@ struct person
 {
   std::string name;
   int age;
-  char gender[2];
+  char gender;
 };
 
 struct widget
@@ -23,7 +23,7 @@ enum spectrum {red, orange, yellow, green, blue, indigo, violet};
 
 int main()
 {
-  person yp {"Youngpyeong Kim", 28, "M"};
+  person yp {"Youngpyeong Kim", 28, 'M'};
 
   std::cout << "name : " << yp.name << " , age : " << yp.age << " , gender : " << yp.gender << " \n";
   // std::cout << "gender[0] : " << yp.gender[0] << " , gender[1] : " << yp.gender[1] << " \n";
@@ -31,6 +31,4 @@ int main()
   spectrum color[3] {red, green, blue};
 
   std::cout << color[0] << " " << color[1] << " " << color[2] << " \n";
-
-  return 0;
 }
