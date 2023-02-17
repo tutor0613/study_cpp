@@ -12,15 +12,24 @@ struct person
 int main()
 {
   // Dynamic structure
-  person * person_ptr = new person;
+  person * people[2];
 
-  person_ptr->name = "Grace Lee";
-  person_ptr->age = 35;
-  person_ptr->gender = 'F';
+  for (int i = 0; i < 2; i++)
+    people[i] = new person;
 
-  std::cout << "name : " << (*person_ptr).name << " , age : " << (*person_ptr).age << " , gender : " << (*person_ptr).gender << " \n";
+  people[0]->name = "Grace Lee";
+  people[0]->age = 35;
+  people[0]->gender = 'F';
 
-  delete person_ptr;
+  people[1]->name = "Brian Park";
+  people[1]->age = 28;
+  people[1]->gender = 'M';
+
+  std::cout << "name : " << people[0]->name << " , age : " << (*people[0]).age << " , gender : " << people[0]->gender << " \n";
+  std::cout << "name : " << people[1]->name << " , age : " << (*(people+1))->age << " , gender : " << (*people[1]).gender << " \n";
+
+  for (int i = 0; i < 2; i++)
+    delete people[i];
 
   return 0;
 }
